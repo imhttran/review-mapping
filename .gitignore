@@ -1,0 +1,18 @@
+.env
+data/.venv/
+data/.ipynb_checkpoints/
+docs/egm/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# macOS
+.DS_Store
+
+# Exercise data from the employer: not published. Put reviews.csv and jobs.csv in data/ to run.
+data/README.md
+data/jobs.csv
+data/reviews.csv
+data/analysis.ipynb
