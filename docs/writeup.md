@@ -1,8 +1,8 @@
 # Writeup: mapping reviews to jobs
 
-Plan: [plans/01-review-mapping.md](plans/01-review-mapping.md) · Requirements: [requirements/01-review-mapping.md](requirements/01-review-mapping.md) · Results: [results.csv](../results.csv) · Code: [python/matcher.py](../python/matcher.py), [python/test_matcher.py](../python/test_matcher.py)
+Plan: [plans/01-review-mapping.md](plans/01-review-mapping.md) · Requirements: [requirements/01-review-mapping.md](requirements/01-review-mapping.md) · Results: [results.csv](findings/results.csv) · Code: [python/matcher.py](../python/matcher.py), [python/test_matcher.py](../python/test_matcher.py)
 
-Run it: `python3 python/matcher.py` writes `results.csv`, and `python3 python/test_matcher.py` runs the checks (`python3 -m unittest` works too). Python 3, standard library only.
+Run it: `python3 python/matcher.py` writes `docs/findings/results.csv` and `no_match.csv`, and `python3 python/test_matcher.py` runs the checks (`python3 -m unittest` works too). Python 3, standard library only.
 
 ## Approach
 
@@ -34,7 +34,7 @@ For each review:
    - **Matched, medium:** a likely winner with doubt. The top identity is only a partial name, email or relative; a runner-up has a stronger identity; a signal on the top candidate contradicts it (a negative signal, or a click after the review); the score is under 60; or the margin is under 30.
    - **Matched, high:** everything else.
 
-Every row in `results.csv` carries the decision reason. Every matched or needs-review row also carries the top candidate's signals with points and the runner-up (PRD R9), and a *needs review* row lists the runner-up's signals too.
+Every row in `results.csv` carries the decision reason. Every matched or needs-review row also carries the top candidate's signals with points and the runner-up (PRD R9), and a *needs review* row lists the runner-up's signals too. [`no_match.csv`](findings/no_match.csv) repeats the 4 no-match rows with only their reason.
 
 ## Results
 

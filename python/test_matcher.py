@@ -696,7 +696,7 @@ def check_results(m):
     if list(csv.DictReader(io.StringIO(buf.getvalue(), newline=""))) != tricky:
         failures.append("results: a tricky reason does not round-trip through the CSV writer")
     # The file on disk is what the matcher gives now (catches a stale results.csv).
-    on_disk = Path(__file__).resolve().parent.parent / "results.csv"
+    on_disk = Path(__file__).resolve().parent.parent / "docs" / "findings" / "results.csv"
     if not on_disk.exists():
         failures.append("results: results.csv is missing (run python3 python/matcher.py)")
     else:

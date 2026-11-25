@@ -1,0 +1,5 @@
+review_id,author_name,reason
+R28,QA Test,test review
+R30,Tom Anderson,service not offered
+R31,happycustomer22,"no job matches the author's name, email or a named relative"
+R32,John Doe,placeholder author

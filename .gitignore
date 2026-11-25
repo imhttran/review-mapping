@@ -16,3 +16,6 @@ data/README.md
 data/jobs.csv
 data/reviews.csv
 data/analysis.ipynb
+
+#SOP
+.agent-sdlc/

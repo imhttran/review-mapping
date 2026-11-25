@@ -10,12 +10,12 @@ Match incoming customer reviews (Google, Facebook, etc.) to the home-service job
 | 2. Plan | [docs/plans/01-review-mapping.md](docs/plans/01-review-mapping.md) | Done |
 | 2a. Data analysis | [docs/findings/dataset_analysis.md](docs/findings/dataset_analysis.md) | Done |
 | 3. Implementation | [python/](python/) (`matcher.py`, `test_matcher.py`) | Done: all 6 phases |
-| 4. Results and writeup | [docs/writeup.md](docs/writeup.md), [results.csv](results.csv) | Done |
+| 4. Results and writeup | [docs/writeup.md](docs/writeup.md), [results.csv](docs/findings/results.csv), [no_match.csv](docs/findings/no_match.csv) | Done |
 
 ## Run
 
 ```
-python3 python/matcher.py   # writes results.csv
+python3 python/matcher.py   # writes docs/findings/results.csv and no_match.csv
 python3 python/test_matcher.py   # assertion checks as unittest tests, ends with "OK"
 python3 -m unittest          # same tests, from the project root
 # MATCHER=/path/to/broken_copy.py python3 python/test_matcher.py   checks another copy of the matcher
@@ -23,7 +23,7 @@ python3 -m unittest          # same tests, from the project root
 
 ## Inputs
 
-The exercise data is not published in this repository. To run the code, put `reviews.csv` and `jobs.csv` (and, if you have it, the exercise prompt `README.md`) in `data/`. `results.csv` is the output from the original run.
+The exercise data is not published in this repository. To run the code, put `reviews.csv` and `jobs.csv` (and, if you have it, the exercise prompt `README.md`) in `data/`. `docs/findings/results.csv` is the output from the original run, and `docs/findings/no_match.csv` lists the reviews left unmatched with the reason.
 
 - `data/reviews.csv`: 40 reviews
 - `data/jobs.csv`: 100 jobs with review-request and click signals

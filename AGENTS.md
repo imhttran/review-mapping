@@ -16,7 +16,7 @@ The project shows its progression through documents, then implementation and wri
 | Plans               | `docs/plans/`        | `NN-<topic>.md`, using the same number and topic as the PRD it implements |
 | Data analysis       | `docs/findings/`     | `dataset_analysis.md`: profile of both CSVs and what it means for the matcher |
 | Writeup             | `docs/writeup.md`    | Approach, results and discussion cases. Numbers come from `results.csv` |
-| Results             | `results.csv`        | Written by `python3 python/matcher.py`. Never edit by hand |
+| Results             | `docs/findings/results.csv`, `docs/findings/no_match.csv` | Written by `python3 python/matcher.py`. Never edit by hand |
 | EGM artifacts       | `docs/egm/`          | `egm_lite_checklist.md`, `egm_lite_alternatives.md`, and other EGM skill output |
 
 - Put every PRD in `docs/requirements/` and every plan in `docs/plans/`. Don't create them anywhere else.
