@@ -393,7 +393,6 @@ def decide(review, jobs, now=None):
 
 RESULT_COLUMNS = ("review_id", "author_name", "outcome", "confidence", "job_id", "customer_name", "runner_up", "reasons")
 RESULTS_PATH = DATA.parent / "docs" / "findings" / "results.csv"
-NO_MATCH_PATH = DATA.parent / "docs" / "findings" / "no_match.csv"
 
 
 def result_rows(reviews, jobs, now=None):
@@ -417,7 +416,7 @@ def write_results(path=RESULTS_PATH):
         writer = csv.DictWriter(f, fieldnames=RESULT_COLUMNS)
         writer.writeheader()
         writer.writerows(rows)
-    with open(NO_MATCH_PATH, "w", newline="", encoding="utf-8") as f:
+    with open(Path(path).with_name("no_match.csv"), "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow(("review_id", "author_name", "reason"))
         # The first entry of reasons is why the review got no match; the rest are the top candidate's signals.

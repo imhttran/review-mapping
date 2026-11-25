@@ -703,6 +703,11 @@ def check_results(m):
         with open(on_disk, newline="", encoding="utf-8") as f:
             if list(csv.DictReader(f)) != rows:
                 failures.append("results: results.csv is stale (run python3 python/matcher.py)")
+    # no_match.csv holds exactly the no-match rows of results.csv, with the first reason only.
+    no_match = on_disk.with_name("no_match.csv")
+    want = [[r["review_id"], r["author_name"], r["reasons"].split(" | ")[0]] for r in rows if r["outcome"] == "no match"]
+    if not no_match.exists() or list(csv.reader(open(no_match, newline="", encoding="utf-8")))[1:] != want:
+        failures.append("results: no_match.csv is missing or stale (run python3 python/matcher.py)")
     return failures
 
 

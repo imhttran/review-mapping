@@ -2,7 +2,7 @@
 
 Plan: [plans/01-review-mapping.md](plans/01-review-mapping.md) · Requirements: [requirements/01-review-mapping.md](requirements/01-review-mapping.md) · Results: [results.csv](findings/results.csv) · Code: [python/matcher.py](../python/matcher.py), [python/test_matcher.py](../python/test_matcher.py)
 
-Run it: `python3 python/matcher.py` writes `docs/findings/results.csv` and `no_match.csv`, and `python3 python/test_matcher.py` runs the checks (`python3 -m unittest` works too). Python 3, standard library only.
+Run it: `python3 python/matcher.py` writes `docs/findings/results.csv` and `docs/findings/no_match.csv`, and `python3 python/test_matcher.py` runs the checks (`python3 -m unittest` works too). Python 3, standard library only.
 
 ## Approach
 

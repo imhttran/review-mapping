@@ -15,7 +15,7 @@ Match incoming customer reviews (Google, Facebook, etc.) to the home-service job
 ## Run
 
 ```
-python3 python/matcher.py   # writes docs/findings/results.csv and no_match.csv
+python3 python/matcher.py   # writes docs/findings/results.csv and docs/findings/no_match.csv
 python3 python/test_matcher.py   # assertion checks as unittest tests, ends with "OK"
 python3 -m unittest          # same tests, from the project root
 # MATCHER=/path/to/broken_copy.py python3 python/test_matcher.py   checks another copy of the matcher
